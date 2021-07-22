@@ -30,6 +30,18 @@
   return quicksort(smallerArr).concat(pivotVal, quicksort(largerArr));
 };
 
-var unsorted = [5, 3, 7, 1, 2];
+const unsorted = [5, 3, 7, 1, 2];
 
-console.log(quicksort(unsorted));
+const expectedOutput = [1, 2, 3, 5, 7];
+
+const actualOutput = quicksort(unsorted);
+
+const assertEqual = (actual, expected) => {
+  if (JSON.stringify(actual) === JSON.stringify(expected)) {
+    console.log('test passed')
+  } else {
+    console.log('test failed')
+  }
+}
+
+assertEqual(actualOutput, expectedOutput)
