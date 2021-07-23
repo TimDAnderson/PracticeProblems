@@ -38,7 +38,7 @@ var removeDuplicates = function(s) {
       if(input[i]===input[i+1]){
           input=input.replace(input[i]+input[i+1],"");
           lens-=2;
-          i=-1;
+          i-=1;
       }         
   }    
   return input;
