@@ -1,3 +1,4 @@
+// First attempt at determining if two strings are an anagram
 const sortString = (string) => {
   return string.split('').sort().join('');
 }
@@ -9,24 +10,25 @@ const isAnagram = (string1, string2) => {
   return sortString(string1) === sortString(string2);
 }
 
+
+
+
+
+
+// find all anagrams given an array, does not use functions above
 const findAllAnagrams = (arr) => {
   let anagrams = {};
   let collection = [];
 
   arr.forEach( word => {
     let letters = word.split('').sort().join('');
-
     anagrams[letters] = anagrams[letters] || [];
-
     anagrams[letters].push(word)
   })
-
-  console.log(anagrams)
 
   for (let key in anagrams) {
     collection.push(anagrams[key])
   }
-
 
   return collection;
 }
