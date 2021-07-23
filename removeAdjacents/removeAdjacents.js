@@ -11,22 +11,37 @@ Return the final string after all such duplicate removals have been made. It can
  * @param {string} s
  * @return {string}
  */
-var removeDuplicates = function (s) {
-  let stringArray = s.split("");
-  let stillWorking = true;
+// var removeDuplicates = function (s) {
+//   let stringArray = s.split("");
+//   let stillWorking = true;
 
-  while (stillWorking) {
-    stillWorking = false;
-    for (let i = 0; i < stringArray.length - 1; i++) {
-      if (stringArray[i] === stringArray[i + 1]) {
-        stillWorking = true;
-        stringArray.splice(i, 2);
-        break;
-      }
-    }
-  }
+//   while (stillWorking) {
+//     stillWorking = false;
+//     for (let i = 0; i < stringArray.length - 1; i++) {
+//       if (stringArray[i] === stringArray[i + 1]) {
+//         stillWorking = true;
+//         stringArray.splice(i, 2);
+//         break;
+//       }
+//     }
+//   }
 
-  return stringArray.join("");
+//   return stringArray.join("");
+// };
+
+var removeDuplicates = function(s) {
+
+  let input = s;
+  let lens = input.length;
+  
+  for(let i = 0; i<lens-1; i++){
+      if(input[i]===input[i+1]){
+          input=input.replace(input[i]+input[i+1],"");
+          lens-=2;
+          i=-1;
+      }         
+  }    
+  return input;
 };
 
 const input = "aa";
