@@ -28,6 +28,21 @@ Note:
  * @param {number[]} stones
  * @return {number}
  */
- var lastStoneWeight = function(stones) {
-    
+var lastStoneWeight = function (stones) {};
+
+const input = [2, 7, 4, 1, 8, 1];
+
+const expectedOutput = 1;
+
+const actualOutput = lastStoneWeight(input);
+
+const assertEqual = (actual, expected) => {
+  if (actual === expected) {
+    console.log("test passed");
+  } else {
+    console.log("test failed");
+    console.log(actual);
+  }
 };
+
+assertEqual(actualOutput, expectedOutput);
