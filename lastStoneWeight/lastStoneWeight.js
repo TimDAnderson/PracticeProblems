@@ -28,11 +28,25 @@ Note:
  * @param {number[]} stones
  * @return {number}
  */
-var lastStoneWeight = function (stones) {};
+var lastStoneWeight = function (stones) {
+  while (stones.length > 1) {
+    stones.sort((a, b) => a - b);
+    let largest = stones.pop();
+    let secondLargest = stones.pop();
+    let remainder = largest - secondLargest;
+    if (remainder > 0) {
+      stones.push(remainder);
+    }
+  }
 
-const input = [2, 7, 4, 1, 8, 1];
+  return stones.length > 0 ? stones[0] : 0;
+};
 
-const expectedOutput = 1;
+// const input = [2, 7, 4, 1, 8, 1];
+const input = [8, 10, 4];
+
+// const expectedOutput = 1;
+const expectedOutput = 2;
 
 const actualOutput = lastStoneWeight(input);
 

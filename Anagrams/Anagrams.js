@@ -1,41 +1,61 @@
 // First attempt at determining if two strings are an anagram
 const sortString = (string) => {
-  return string.split('').sort().join('');
-}
+  return string.split("").sort().join("");
+};
 
 const isAnagram = (string1, string2) => {
-  string1 = string1.replace(/[^\w]/g, '').toLowerCase();
-  string2 = string2.replace(/[^\w]/g, '').toLowerCase();
+  string1 = string1.replace(/[^\w]/g, "").toLowerCase();
+  string2 = string2.replace(/[^\w]/g, "").toLowerCase();
 
   return sortString(string1) === sortString(string2);
-}
-
-
-
-
-
+};
 
 // find all anagrams given an array, does not use functions above
 const findAllAnagrams = (arr) => {
   let anagrams = {};
   let collection = [];
 
-  arr.forEach( word => {
-    let letters = word.split('').sort().join('');
+  arr.forEach((word) => {
+    let letters = word.split("").sort().join("");
     anagrams[letters] = anagrams[letters] || [];
-    anagrams[letters].push(word)
-  })
+    anagrams[letters].push(word);
+  });
 
   for (let key in anagrams) {
-    collection.push(anagrams[key])
+    collection.push(anagrams[key]);
   }
 
   return collection;
-}
+};
 
-const anagramArray = ['bag', 'gab', 'foo', 'abg', 'oof', 'bum', 
-'cat', 'dog', 'tac', 'god', 'act', 'cars', 'repaid', 'dues', 'nose', 
-'signed', 'lane', 'paired', 'arcs', 'grab', 'used', 'ones', 'brag', 
-'sued', 'lean', 'scar', 'design']
+const anagramArray = [
+  "bag",
+  "gab",
+  "foo",
+  "abg",
+  "oof",
+  "bum",
+  "cat",
+  "dog",
+  "tac",
+  "god",
+  "act",
+  "cars",
+  "repaid",
+  "dues",
+  "nose",
+  "signed",
+  "lane",
+  "paired",
+  "arcs",
+  "grab",
+  "used",
+  "ones",
+  "brag",
+  "sued",
+  "lean",
+  "scar",
+  "design",
+];
 
-console.log(findAllAnagrams(anagramArray))
+console.log(findAllAnagrams(anagramArray));
