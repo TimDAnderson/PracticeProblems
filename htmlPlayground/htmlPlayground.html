@@ -10,14 +10,11 @@
   <div id="hi">hi</div>
   <button id="button">Click Me</button>
   <div id="popUp"></div>
-  <script>
-    console.log('hi')
-    let element = document.getElementById('button')
-    console.log(element)
-    document.getElementById('button').addEventListener('click', () => {
-      console.log('got a click')
-      document.getElementById("popUp").innerHTML = "Hello World";
-    })
-  </script>
+  <div id="parent">
+    <h3>kid1</h3>
+    <h3>kid2</h3>
+    <h3>kid3</h3>
+  </div>
+  <script src="htmlPlayground.js"></script>
 </body>
 </html>
