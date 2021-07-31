@@ -12,10 +12,10 @@
  
   //make an object we push to
   for (var i = 0; i < string.length; i++) {
-    if (returnObj[string[i]] === undefined) {
+    if (!returnObj[string[i]]) {
       returnObj[string[i]] = 1;
     } else {
-      returnObj[string[i]] =  returnObj[string[i]] + 1;
+      returnObj[string[i]] += 1;
     }
   }
 
