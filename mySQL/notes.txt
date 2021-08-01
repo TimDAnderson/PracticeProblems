@@ -8,3 +8,27 @@ USE practice;
 
 SHOW TABLES;
 
+CREATE TABLE users (
+  ID INT NOT NULL AUTO_INCREMENT,
+  userName varchar(50) UNIQUE NOT NULL,
+  about varchar(250),
+  age INTEGER,
+  PRIMARY KEY (ID)
+);
+
+DESCRIBE users;
+
+CREATE TABLE games (
+  ID INT NOT NULL AUTO_INCREMENT,
+  winner varchar(50),
+  PRIMARY KEY (ID)
+);
+
+INSERT INTO games (winner) VALUES ('Tim');
+INSERT INTO games (winner) VALUES ('Sarah');
+INSERT INTO games (winner) VALUES ('Ari');
+INSERT INTO games (winner) VALUES ('Ari');
+
+SELECT * FROM games;
+
+SELECT COUNT(winner) FROM games where winner = 'Ari';
