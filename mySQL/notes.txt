@@ -34,3 +34,5 @@ SELECT * FROM games;
 SELECT COUNT(winner) FROM games where winner = 'Ari';
 
 SELECT winner, count(*) FROM games GROUP BY winner;
+
+
