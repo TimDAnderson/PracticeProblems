@@ -1,0 +1,10 @@
+Raw syntax cheat sheet / practice
+
+show databases;
+
+CREATE DATABASE practice;
+
+USE practice;
+
+SHOW TABLES;
+
