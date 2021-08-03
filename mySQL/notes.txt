@@ -37,3 +37,4 @@ SELECT winner, count(*) FROM games GROUP BY winner;
 
 SELECT * from jobs WHERE status = 'queued' ORDER BY created_at ASC LIMIT 1; 
 
+COUNT() AVG() SUM()
